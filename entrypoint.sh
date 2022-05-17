@@ -12,7 +12,6 @@ fi
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 detekt_command="java -jar /opt/detekt.jar "
-detekt_command+="--fail-fast "
 detekt_command+="--config ${INPUT_DETEKT_CONFIG} "
 detekt_command+="--report xml:detekt_report.xml "
 detekt_command+="--excludes ${INPUT_DETEKT_EXCLUDES} "
