@@ -17,10 +17,8 @@ detekt_command+="--config ${INPUT_DETEKT_CONFIG} "
 detekt_command+="--report xml:detekt_report.xml "
 detekt_command+="--excludes ${INPUT_DETEKT_EXCLUDES} "
 
-if [ -z "$INPUT_DETEKT_PLUGINS" ]; then
-  detekt_command+="--plugins ${detekt_formatting} "
-else
-  detekt_command+="--plugins ${detekt_formatting},${INPUT_DETEKT_PLUGINS} "
+if [ -n "$INPUT_DETEKT_PLUGINS" ]; then
+  detekt_command+="--plugins ${INPUT_DETEKT_PLUGINS} "
 fi
 
 if [ -n "$INPUT_DETEKT_BASELINE" ]; then
